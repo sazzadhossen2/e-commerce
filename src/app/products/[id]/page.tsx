@@ -20,7 +20,7 @@ import Image from "next/image";
   
     };
 
-const ProductDetailsPage =async ( {params, searchParams}:{params:Promise<{id:string}>, searchParams:Promise<{color:string;size:string}>} ) => {
+const ProductDetailsPage =async ( {searchParams}:{params:Promise<{id:string}>, searchParams:Promise<{color:string;size:string}>} ) => {
  const  {color, size} = await searchParams;
   const selectSize = (size || product.sizes[0] as string);
   const selectColor = (color || product.colors[0] as string);

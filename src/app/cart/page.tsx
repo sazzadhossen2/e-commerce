@@ -3,12 +3,11 @@
 import PaymentForm from "@/component/PaymentForm";
 import ShippingForm from "@/component/ShippingForm";
 import useCartStore from "@/stores/cartStores";
-import { CartItemsType, ShippingFormType } from "@/types";
+import { ShippingFormType } from "@/types";
 import { ArrowRight, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-// import { useRouter } from "next/router";
-import { use, useState } from "react";
+import { useState } from "react";
 
 const step =[
     {id:1,
@@ -86,7 +85,7 @@ const CartPage = () => {
 
     const activeStep =parseInt(searchParams.get("step") || "1");
 
-    const {cart, removeFromCart, clearCart} = useCartStore(); 
+    const {cart, removeFromCart} = useCartStore(); 
   return (
     <div className="flex flex-col gap-8 items-center justify-center mt-12">
       <h1 className="text-2xl font-medium">Your Shopping Cart</h1>
