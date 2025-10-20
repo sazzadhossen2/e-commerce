@@ -3,7 +3,6 @@ import { Cat } from "lucide-react";
 import Link from "next/link";
 import { Categories } from "./Categories";
 import { ProductCard } from "./ProductCard";
-import Filters from "./Filters";
 
 // TEMPORARY DATA
 const products: ProductsListType = [
@@ -117,11 +116,10 @@ const products: ProductsListType = [
   },
 ];
 
-const ProductList = ({category,params}: {category: string,params:"homepage" | "products"}) => {
+const ProductList = ({category}: {category: string}) => {
   return (
     <div className="w-full">
         <Categories/>
-        {params === "products" && <Filters />}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-12">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
