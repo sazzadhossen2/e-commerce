@@ -32,12 +32,13 @@ const useCartStore = create<CartStoreStatusType & CartStoreActionsType>()(
           ]
         };
       }),
-      removeFromCart: (product) => set((state) => ({ cart: state.cart.filter((item) => 
-    !(item.id === product.id && item.selectedSize === product.selectedSize &&
-
-        item.selectedColor === product.selectedColor
-    )
-    ) })),
+      removeFromCart: (product) => set((state) => ({ 
+        cart: state.cart.filter((item) => 
+          !(item.id === product.id && 
+            item.selectedSize === product.selectedSize && 
+            item.selectedColor === product.selectedColor)
+        ) 
+      })),
       clearCart: () => set({ cart: [] }),
     }),
     {
