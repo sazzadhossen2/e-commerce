@@ -1,5 +1,4 @@
 import { ProductsListType,  } from "@/types";
-import { Cat } from "lucide-react";
 import Link from "next/link";
 import { Categories } from "./Categories";
 import { ProductCard } from "./ProductCard";

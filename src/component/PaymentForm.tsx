@@ -1,9 +1,8 @@
 
 import { paymentFormMethods, PaymentFormType } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowRight, ShoppingCart } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 const PaymentForm = () => {
@@ -11,13 +10,9 @@ const PaymentForm = () => {
     resolver: zodResolver(paymentFormMethods)
   });
 
-  const router = useRouter();
-  const onSubmitPayment = (data: PaymentFormType) => {
-
+  const onSubmitPayment = () => {
+    // Handle payment submission
   };
-    const onBackToShipping = () => {
-      router.push("/cart?step=2", { scroll: false });
-  }
 
   return (
   <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmitPayment)}>
